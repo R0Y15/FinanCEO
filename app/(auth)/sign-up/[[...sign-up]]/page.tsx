@@ -24,6 +24,7 @@ const Signup = () => {
 
         try {
             const res = await createUserWithEmailAndPassword(email, password);
+            sessionStorage.setItem("user", String(true));
 
             setEmail('');
             setPassword('');
