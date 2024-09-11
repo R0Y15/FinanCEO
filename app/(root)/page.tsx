@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { LogoutBtn, Sidebar, TransactionForm, TransactionList } from "@/components";
+import { LogoutBtn, Navbar, Sidebar, TransactionForm, TransactionList } from "@/components";
 
 export default function Home() {
   const [user] = useAuthState(auth);
@@ -21,9 +21,9 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Financial Data Management</h1>
       {/* <TransactionForm />
       <TransactionList /> */}
+      <Navbar />
       <Sidebar />
       <LogoutBtn />
     </div>
