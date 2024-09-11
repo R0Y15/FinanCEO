@@ -1,0 +1,82 @@
+
+.Pcard {
+    width: 300px;
+    height: 180px;
+    background: linear-gradient(135deg, #003F58, #01AEF9);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  .chip-graph {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/Lines.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  
+  .Pcard-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1;
+    width: 60%;
+  }
+  
+  .Pcard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Pcard-name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .card-owner {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .Pcard-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .cardholder-name,
+  .expiration-date,
+  .Pcard-number {
+    margin: 5px 0;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+  }
+  
+  .Pcard-functions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1;
+    width: 40%;
+  }
+  
+  .payMethod {
+    margin-bottom: 20px;
+  }

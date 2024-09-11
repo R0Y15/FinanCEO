@@ -6,7 +6,10 @@ import React from 'react'
 
 const LogoutBtn = () => {
     return (
-        <button onClick={() => signOut(auth)}>
+        <button onClick={() => {
+            signOut(auth);
+            sessionStorage.removeItem("user");
+        }}>
             Logout
         </button>
     )

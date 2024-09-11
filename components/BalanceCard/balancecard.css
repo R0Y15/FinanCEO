@@ -1,0 +1,101 @@
+.balance-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d1d5db; /* gray-400 */
+    width: 300px;
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1.5rem; /* p-6 */
+}
+
+.balance-header {
+    font-size: 1rem; /* text-md */
+    font-weight: 600; /* font-semibold */
+    color: #6b7280; /* text-gray-500 */
+    align-items: flex-start; /* items-start */
+}
+
+.balance-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem; /* mt-2 */
+    justify-content: space-between;
+}
+
+.balance-amount {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: bold; /* font-bold */
+}
+
+.balance-change {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-percentage {
+    font-weight: 500; /* font-medium */
+}
+
+.change-percentage.up {
+    color: #10b981; /* text-green-400 */
+}
+
+.change-percentage.down {
+    color: #ef4444; /* text-red-400 */
+}
+
+.flipped {
+    transform: scaleY(-1); /* scale-y-[-1] */
+}
+
+.divider {
+    border-bottom: 2px solid #d1d5db; /* border-gray-400 */
+    margin: 1.5rem 0; /* my-6 */
+}
+
+.balance-details {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem; /* mt-2 */
+    justify-content: space-between;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-header {
+    font-size: 1rem; /* text-md */
+    font-weight: 600; /* font-semibold */
+    color: #6b7280; /* text-gray-500 */
+    align-items: flex-start; /* items-start */
+}
+
+.detail-value {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: bold; /* font-bold */
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+.add-card-btn {
+    display: flex;
+    background-color: #e5e7eb; /* bg-gray-200 */
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem; /* gap-3 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.75rem; /* rounded-xl */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-card-btn:hover {
+    background-color: #d1d5db; /* hover:bg-gray-300 */
+}
+
+.add-card-text {
+    font-weight: 500; /* font-medium */
+}

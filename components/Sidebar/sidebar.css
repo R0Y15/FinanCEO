@@ -1,0 +1,19 @@
+.sidebar-section {
+    width: 25rem; /* w-[25rem] */
+}
+
+.sidebar-title {
+    font-weight: bold; /* font-bold */
+    font-size: 22px; /* text-[22px] */
+    margin-left: 50px; /* mx-[50px] */
+    margin-right: 50px; /* mx-[50px] */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.sidebar-content {
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+    justify-content: center; /* justify-center */
+    gap: 1.5rem; /* gap-6 */
+}
