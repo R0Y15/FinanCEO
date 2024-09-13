@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Chart, CurrencyConvert, MySavings, Transactions } from "@/components";
+import { Chart, CurrencyConvert, LogoutBtn, MySavings, Transactions } from "@/components";
 import UserStatsCard from "@/components/userStatsCard/UserStatsCard";
 // import { Item, UserStats } from "@/utils";
 import Grid from "@mui/material/Grid2";
@@ -59,6 +59,7 @@ export default function Home() {
                 </Grid>
             </Box>
 
+<LogoutBtn />
         </div>
     );
 }

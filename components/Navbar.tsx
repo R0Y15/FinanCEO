@@ -1,11 +1,10 @@
 'use client';
 
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { navItems } from '@/utils';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import Link from 'next/link';
 import { Android12Switch } from '@/types';
 import { FormControlLabel } from '@mui/material';
 import { useTheme } from 'next-themes';

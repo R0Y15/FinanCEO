@@ -23,7 +23,7 @@ const Signup = () => {
         e.preventDefault();
 
         try {
-            const res = await createUserWithEmailAndPassword(email, password);
+            // const res = await createUserWithEmailAndPassword(email, password);
             sessionStorage.setItem("user", String(true));
 
             setEmail('');

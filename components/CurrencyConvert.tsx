@@ -1,10 +1,8 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { Currencies, monthlyExpenses } from '@/utils'
-import { FormControl, MenuItem, Select } from '@mui/material'
+import { Currencies } from '@/utils'
 import axios from 'axios';
-import Image from 'next/image'
 
 const CurrencyConvert = () => {
 
