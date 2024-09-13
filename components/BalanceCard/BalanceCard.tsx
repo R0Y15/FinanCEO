@@ -5,7 +5,7 @@ import Image from 'next/image';
 const BalanceCard = () => {
     return (
         <>
-            <div className="balance-card">
+            <div className="balance-card dark:border-gray-700">
                 <h2 className="balance-header">Your Balance</h2>
                 <div className="balance-info">
                     <h1 className="balance-amount">$128,320</h1>
@@ -29,7 +29,7 @@ const BalanceCard = () => {
                         <p className="change-percentage down">23.12%</p>
                     </div>
                 </div>
-                <div className="divider"></div>
+                <div className="divider dark:border-gray-700"></div>
                 <div className="balance-details">
                     <div className="detail">
                         <h2 className="detail-header">Currency</h2>
@@ -41,7 +41,7 @@ const BalanceCard = () => {
                     </div>
                 </div>
             </div>
-            <div className="add-card-btn">
+            <div className="add-card-btn dark:bg-gray-800">
                 <Image
                     src={'/assets/add.svg'}
                     width={20}

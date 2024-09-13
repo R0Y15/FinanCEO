@@ -25,15 +25,15 @@ const QuickTransfer = () => {
                         <label className="quick-transfer-label">Card Number</label>
                         <input
                             type="text"
-                            className="quick-transfer-input"
+                            className="quick-transfer-input dark:border-gray-700"
                             placeholder="1234 2345 7379 9090"
                         />
                     </div>
                     <div className="quick-transfer-buttons">
-                        <button className="send-money-btn">
+                        <button className="send-money-btn dark:bg-gray-800 border-none">
                             Send money
                         </button>
-                        <button className="save-draft-btn">
+                        <button className="save-draft-btn dark:bg-transparent dark:border-gray-700 dark:text-white">
                             Save as Draft
                         </button>
                     </div>

@@ -1,80 +1,127 @@
-import { styled, Switch } from "@mui/material";
-
-export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-    width: 62,
-    height: 34,
-    padding: 7,
-    '& .MuiSwitch-switchBase': {
-        margin: 1,
-        padding: 0,
-        transform: 'translateX(6px)',
-        '&.Mui-checked': {
-            color: '#fff',
-            transform: 'translateX(22px)',
-            '& .MuiSwitch-thumb:before': {
-                backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
-                    '#fff',
-                )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
-            },
-            '& + .MuiSwitch-track': {
-                opacity: 1,
-                backgroundColor: '#aab4be',
-                ...theme.applyStyles('dark', {
-                    backgroundColor: '#8796A5',
-                }),
-            },
-        },
-    },
-    '& .MuiSwitch-thumb': {
-        backgroundColor: '#00B3FF',
-        width: 32,
-        height: 32,
-        '&::before': {
-            content: "''",
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            left: 0,
-            top: 0,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
-                '#fff',
-            )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
-        },
-        ...theme.applyStyles('dark', {
-            backgroundColor: '#003892',
-        }),
-    },
-    '& .MuiSwitch-track': {
-        opacity: 1,
-        backgroundColor: '#aab4be',
-        borderRadius: 20 / 2,
-        ...theme.applyStyles('dark', {
-            backgroundColor: '#8796A5',
-        }),
-    },
-}));
-
 export const navItems = [
-    {
-        name: 'Overview',
-        icon: '/assets/overview.svg',
-        link: '/',
-    },
-    {
-        name: 'Transaction',
-        icon: '/assets/transaction.svg',
-        link: '#',
-    },
-    {
-        name: 'Invoice',
-        icon: '/assets/invoice.svg',
-        link: '#',
-    },
-    {
-        name: 'Activity',
-        icon: '/assets/activity.svg',
-        link: '#',
-    },
+  {
+    name: 'Overview',
+    icon: '/assets/overview.svg',
+    link: '/',
+  },
+  {
+    name: 'Transaction',
+    icon: '/assets/transaction.svg',
+    link: '/transaction',
+  },
+  {
+    name: 'Invoice',
+    icon: '/assets/invoice.svg',
+    link: '/invoice',
+  },
+  {
+    name: 'Activity',
+    icon: '/assets/activity.svg',
+    link: '/activity',
+  },
+];
+
+export const UserStats = [
+  {
+    name: 'MyBalance',
+    value: 128320,
+    color: 'blue',
+  },
+  {
+    name: 'Income',
+    value: 128320,
+    color: 'green',
+    percentage: 11.09
+  },
+  {
+    name: 'Savings',
+    value: 128320,
+    color: 'yellow',
+    percentage: 11.09
+  },
+  {
+    name: 'Expense',
+    value: 128320,
+    color: 'red',
+  },
+];
+
+export const monthlyExpenses = [
+  { month: 'Jan', income: 5000, expenses: 2000 },
+  { month: 'Feb', income: 5200, expenses: 4100 },
+  { month: 'Mar', income: 2800, expenses: 3000 },
+  { month: 'Apr', income: 1900, expenses: 1200 },
+  { month: 'May', income: 5300, expenses: 3300 },
+  { month: 'Jun', income: 8500, expenses: 3400 },
+];
+
+export const Mysavings = [
+  { title: 'Gaming PC', amount: '$309', progress: 30 },
+  { title: 'New house', amount: '$950', progress: 50 },
+  { title: 'Summer trip', amount: '$550', progress: 40 },
+  { title: 'Wedding', amount: '$620', progress: 60 },
+  { title: 'Top up game', amount: '$170', progress: 20 },
+  { title: 'Top up game', amount: '$170', progress: 20 },
+  { title: 'Top up game', amount: '$170', progress: 20 },
+  { title: 'Top up game', amount: '$170', progress: 20 },
+];
+
+export const Currencies = [
+  { code: "USD" },
+  { code: "EUR" },
+  { code: "GBP" },
+  { code: "INR" }
+];
+
+export const TransactionHistory = [
+  {
+    transactionType: "Order Revenue",
+    date: "2024-09-12T10:15:30Z",
+    amount: 250.75
+  },
+  {
+    transactionType: "Withdrawal Initiated",
+    date: "2024-09-11T14:22:10Z",
+    amount: -150.00
+  },
+  {
+    transactionType: "Order Revenue",
+    date: "2024-09-10T09:45:00Z",
+    amount: 320.50
+  },
+  {
+    transactionType: "Withdrawal Initiated",
+    date: "2024-09-09T16:30:45Z",
+    amount: -200.25
+  },
+  {
+    transactionType: "Order Revenue",
+    date: "2024-09-08T12:00:00Z",
+    amount: 500.00
+  },
+  {
+    transactionType: "Withdrawal Initiated",
+    date: "2024-09-07T18:15:30Z",
+    amount: -75.50
+  },
+  {
+    transactionType: "Order Revenue",
+    date: "2024-09-06T11:45:20Z",
+    amount: 450.30
+  },
+  {
+    transactionType: "Withdrawal Initiated",
+    date: "2024-09-05T13:10:15Z",
+    amount: -300.00
+  },
+  {
+    transactionType: "Order Revenue",
+    date: "2024-09-04T15:25:40Z",
+    amount: 600.75
+  },
+  {
+    transactionType: "Withdrawal Initiated",
+    date: "2024-09-03T17:50:55Z",
+    amount: -125.00
+  }
 ];

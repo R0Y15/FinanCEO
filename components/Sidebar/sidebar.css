@@ -18,3 +18,17 @@
     justify-content: center; /* justify-center */
     gap: 1.5rem; /* gap-6 */
 }
+
+/* Hide sidebar on small devices */
+@media (max-width: 767px) {
+    .sidebar-section {
+        display: none;
+    }
+}
+
+/* Show sidebar on medium and large devices */
+@media (min-width: 768px) {
+    .sidebar-section {
+        display: block;
+    }
+}
