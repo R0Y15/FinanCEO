@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Chart, CurrencyConvert, LogoutBtn, MySavings, Transactions } from "@/components";
 import UserStatsCard from "@/components/userStatsCard/UserStatsCard";
-// import { Item, UserStats } from "@/utils";
 import Grid from "@mui/material/Grid2";
 import { Box } from "@mui/material";
 import { UserStats } from "@/utils";
@@ -59,8 +58,6 @@ export default function Home() {
                         </Grid>
                     </Grid>
                 </Box>
-
-            <LogoutBtn />
         </div>
     );
 }
