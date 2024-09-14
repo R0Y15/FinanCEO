@@ -9,6 +9,8 @@ import { Android12Switch } from '@/types';
 import { FormControlLabel } from '@mui/material';
 import { useTheme } from 'next-themes';
 import { usePathname, useRouter } from 'next/navigation';
+import { signOut } from 'firebase/auth';
+import { auth } from '@/app/firebase/config';
 
 const Navbar = () => {
   // const [activeIndex, setActiveIndex] = useState(0);
@@ -28,15 +30,17 @@ const Navbar = () => {
       <nav className='fixed top-0 left-0 right-0 flex flex-col w-full h-auto px-12 z-50 border-b dark:border-none bg-white dark:bg-gray-900 text-black dark:text-white'>
         <div className="flex justify-between w-full h-[75px]">
           <div className='flex items-center justify-center gap-2'>
-            <Image
-              src={'/assets/logo.svg'}
-              width={30}
-              height={30}
-              alt='logo'
-            />
-            <h1 className='font-medium text-xl'>FinanCEO</h1>
+            <div className='flex flex-row gap-2 cursor-pointer' onClick={() => router.push('/')}>
+              <Image
+                src={'/assets/logo.svg'}
+                width={30}
+                height={30}
+                alt='logo'
+              />
+              <h1 className='font-medium text-xl'>FinanCEO</h1>
+            </div>
 
-            <ul className='hidden md:flex flex-row gap-5 h-full p-3 ml-2'>
+            <ul className='hidden md:flex flex-row gap-5 h-full p-3 ml-2 cursor-pointer'>
               {navItems.map((item, idx) => (
                 <li key={idx} className='flex flex-row'>
                   <div
@@ -94,7 +98,12 @@ const Navbar = () => {
                 </div>
               </button>
             </div>
-            <div className='rounded-full w-11 h-11 bg-gray-300 dark:bg-[#1A2B3C] cursor-pointer' />
+            <div
+              className='rounded-full w-11 h-11 bg-gray-300 dark:bg-[#1A2B3C] cursor-pointer'
+              onClick={() => {
+                signOut(auth);
+                sessionStorage.removeItem("user");
+              }} />
           </div>
         </div>
 

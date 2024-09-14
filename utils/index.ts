@@ -125,3 +125,8 @@ export const TransactionHistory = [
     amount: -125.00
   }
 ];
+
+export const transactionTypes = [
+  "Order Revenue",
+  "Withdrawal Initiated",
+];

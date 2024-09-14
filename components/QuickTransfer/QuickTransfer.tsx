@@ -1,8 +1,25 @@
+"use client";
+
 import Image from 'next/image';
-import React from 'react';
-import './quicktransfer.css'; 
+import React, { useState } from 'react';
+import './quicktransfer.css';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/store';
+import { addTransaction } from '@/store/transactionsSlice';
 
 const QuickTransfer = () => {
+    const [amount, setAmount] = useState<number | undefined>();
+    const dispatch = useDispatch<AppDispatch>();
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const id = new Date().getTime(); // Generate a unique ID for each transaction
+        const transactionType = 'Quick Transfer';
+        const date = new Date().toISOString().split('T')[0];
+        dispatch(addTransaction({ id, transactionType, date, amount: amount ?? 0 }));
+        setAmount(0);
+    };
     return (
         <>
             <section className="quick-transfer-section">
@@ -21,24 +38,33 @@ const QuickTransfer = () => {
                             alt='next-slider'
                         />
                     </div>
-                    <div className="quick-transfer-input-container">
-                        <label className="quick-transfer-label">Card Number</label>
-                        <input
-                            type="text"
-                            className="quick-transfer-input dark:border-gray-700"
-                            placeholder="1234 2345 7379 9090"
-                        />
-                    </div>
-                    <div className="quick-transfer-buttons">
-                        <button className="send-money-btn dark:bg-gray-800 border-none">
-                            Send money
-                        </button>
-                        <button className="save-draft-btn dark:bg-transparent dark:border-gray-700 dark:text-white">
-                            Save as Draft
-                        </button>
-                    </div>
+                    <form
+                        onSubmit={handleSubmit}
+                        className='flex flex-col w-full'
+                    >
+                        <div className="quick-transfer-input-container">
+                            <label className="quick-transfer-label">Card Number</label>
+                            <input
+                                type="text"
+                                className="quick-transfer-input dark:border-gray-700"
+                                placeholder="1234 2345 7379 9090"
+                            />
+                        </div>
+                        <div className="quick-transfer-buttons">
+                            <input
+                                type="number"
+                                value={amount}
+                                onChange={(e) => setAmount(Number(e.target.value))}
+                                placeholder='Amount'
+                                className='w-1/2 border p-3 rounded-lg active:border-[#fff] dark:border-gray-700'
+                            />
+                            <button className="send-money-btn dark:bg-gray-800 border-none">
+                                Send money
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </section>
+            </section >
         </>
     );
 };

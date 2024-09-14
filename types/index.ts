@@ -55,6 +55,17 @@ export interface UserStatsCardProps {
 
 export interface SavingsItemProps {
     title: string;
-    amount: string;
-    progress: number;
+    amount: number;
+    progress: number | undefined;
+}
+
+export interface TransactionProps {
+    component?: boolean;
+}
+
+export interface Saving {
+    title: string;
+    amount: number;
+    goal: number;
+    progress?: number;
 }

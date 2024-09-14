@@ -1,37 +1,16 @@
-// import { Item } from '@/utils'
-// import { Box, Grid } from '@mui/material'
-// import React from 'react'
-
-// const page = () => {
-//     return (
-//         <div>
-//             <Box sx={{ flexGrow: 1 }}>
-//                 <Grid container spacing={2}>
-//                     <Grid item xs={6} md={8}>
-//                         <Item>xs=6 md=8</Item>
-//                     </Grid>
-//                     <Grid item xs={6} md={4}>
-//                         <Item>xs=6 md=4</Item>
-//                     </Grid>
-//                     <Grid item xs={6} md={4}>
-//                         <Item>xs=6 md=4</Item>
-//                     </Grid>
-//                     <Grid item xs={6} md={8}>
-//                         <Item>xs=6 md=8</Item>
-//                     </Grid>
-//                 </Grid>
-//             </Box>
-//         </div>
-//     )
-// }
-
-// export default page
-
+import { MySavings, SavingsForm, Transactions } from '@/components'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>helo Transaction</div>
+    <div className='flex flex-col md:flex-row justify-between items-center gap-2 overflow-hidden md:h-[85vh] w-full 2xl:w-3/4'>
+      <div className='flex flex-col justify-between items-center gap-2 md:gap-y-8 md:w-1/2 h-full'>
+        <MySavings />
+        <SavingsForm />
+      </div>
+      <Transactions />
+    </div>
+
   )
 }
 

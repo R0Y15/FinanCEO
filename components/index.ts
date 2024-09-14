@@ -5,20 +5,19 @@ import MySavings from "./MySavings"
 import Navbar from "./Navbar"
 import PaymentCard from "./PaymentCard/PaymentCard"
 import Sidebar from "./Sidebar/Sidebar"
-import TransactionForm from "./TransactionForm"
-import TransactionList from "./TransactionList"
+import TransactionsForm from "./TransactionsForm"
 import Transactions from "./Transactions"
+import SavingsForm from "./SavingsForm"
 
 export {
     Navbar,
     LogoutBtn,
     PaymentCard,
     Sidebar,
-    TransactionForm,
+    TransactionsForm,
     MySavings,
-    TransactionList,
     Chart,
     CurrencyConvert,
     Transactions,
-
+    SavingsForm,
 }
