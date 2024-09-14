@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align='center'>
+FinanCEO
+</h1>
+<p align='center' style="font-size:1.5em; font-weight:bold;">
+"A Financial Dashboard Application for all your needs."💸
+</p>
 
-## Getting Started
+Transform the way you manage your finances with [App Name], the ultimate financial dashboard app. Seamlessly track your income, expenses, and investments in one intuitive platform. Gain real-time insights, set personalized goals, and make informed decisions with our powerful analytics.
+##### View Deployment: https://financeo.vercel.app/
+<img alt="Next JS" src="./public/mockup.png" />
 
-First, run the development server:
+## Built With
+<p align='center'> 
+<img alt="Next JS" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" />
+<img alt="typeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+<img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+<img alt="Redux" src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" />
+<img alt="Material UI" src="https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=mui&logoColor=white" />
+</p>
 
+## Home Page ScreenShot
+<p align='center'>
+<img alt="Next JS" src="./public/FinanCEO(Home).png" />
+<img alt="Next JS" src="./public/FinanCEO(Home-dark).png" />
+<img alt="Next JS" src="./public/FinanCEO.png" />
+</p>
+
+## For using on local machine
+
+#### Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/R0Y15/FinanCEO.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Install the Project Using
+```bash
+npm install
+# or
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Create a .env file in the root directory and add the following
+```bash
+NEXT_PUBLIC_FIREBASE_API_KEY= [your firebase api key]
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN= [your firebase auth domain]
+NEXT_PUBLIC_FIREBASE_PROJECT_ID= [your firebase project id]
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET= [your firebase storage bucket]
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID= [your firebase messaging sender id]
+NEXT_PUBLIC_FIREBASE_APP_ID= [your firebase app id]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+NEXT_PUBLIC_EXCHANGERATE_API_KEY= [your exchangerate api key]
+```
 
-## Learn More
+#### Run the Project Using
+```bash
+npm run dev
+#or
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### View the local deployment at
+```bash
+http://localhost:3000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please feel free to contribute to this repository. Contributions are always welcomed. 
+Create a pull request incase you feel some more better changes could be made to the site and we will review your changes.
