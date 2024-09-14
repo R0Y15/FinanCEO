@@ -31,7 +31,7 @@ export default function Home() {
             <Grid container spacing={{ xs: 2, sm: 2, md: 15 }} columns={{ xs: 2, sm: 8, md: 18 }}>
                 {UserStats.map((stat, idx) => (
                     <Grid key={idx} size={{ xs: 2, sm: 4, md: 4 }}>
-                        <Item className="bg-transparent">
+                        <Item className="dark:bg-[#121212]">
                             <UserStatsCard
                                 name={stat.name}
                                 value={stat.value}
@@ -45,17 +45,17 @@ export default function Home() {
             
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container rowSpacing={1}>
-                    <Grid size={8}>
-                        <Item className="bg-transparent"><Chart /></Item>
+                    <Grid size={7.5}>
+                        <Item className="dark:bg-[#121212]"><Chart /></Item>
                     </Grid>
                     <Grid size={4}>
-                        <Item className="bg-transparent"><MySavings /></Item>
+                        <Item className="dark:bg-[#121212]"><MySavings /></Item>
                     </Grid>
                     <Grid size={6}>
-                        <Item className="bg-transparent"><CurrencyConvert /></Item>
+                        <Item className="dark:bg-[#121212]"><CurrencyConvert /></Item>
                     </Grid>
                     <Grid size={6}>
-                        <Item className="bg-transparent"><Transactions /></Item>
+                        <Item className="dark:bg-[#121212]"><Transactions /></Item>
                     </Grid>
                 </Grid>
             </Box>
