@@ -1,14 +1,9 @@
-import { Metadata } from 'next';
-import { ThemeProvider } from 'next-themes';
-import React, { ReactNode } from 'react'
+"use client";
 
-export const metadata: Metadata = {
-    title: "FinanCEO",
-    description: "An App that handles all your financial needs",
-    icons: {
-        icon: "/icons/logo.svg",
-    }
-};
+import withAuth from '@/HOC/withAuth';
+import { ThemeProvider } from 'next-themes';
+import React, { ReactNode } from 'react';
+import { metadata } from './metadata'; // Import metadata
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
     return (
@@ -17,7 +12,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
                 {children}
             </ThemeProvider>
         </main>
-    )
-}
+    );
+};
 
-export default RootLayout
+export default withAuth(RootLayout);

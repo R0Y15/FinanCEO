@@ -1,10 +1,10 @@
 // @ts-nocheck
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField, Button, Container, CssBaseline, Box, Typography, Paper } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 
@@ -15,16 +15,28 @@ const theme = createTheme({
 });
 
 const Signup = () => {
+
+    const [user] = useAuthState(auth);
+    const [userSession, setUserSession] = useState<string | null>(null);
+    const router = useRouter();
+
+    useEffect(() => {
+        const session = sessionStorage.getItem("user");
+        setUserSession(session);
+        if (user && session) {
+            router.push("/");
+        }
+    }, [user, router]);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter();
     const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
 
         try {
-            // const res = await createUserWithEmailAndPassword(email, password);
+            const res = await createUserWithEmailAndPassword(email, password);
             sessionStorage.setItem("user", String(true));
 
             setEmail('');

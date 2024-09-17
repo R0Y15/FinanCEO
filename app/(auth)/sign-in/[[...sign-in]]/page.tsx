@@ -1,10 +1,10 @@
 // @ts-nocheck
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField, Button, Container, CssBaseline, Box, Typography, Paper } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 
@@ -15,10 +15,22 @@ const theme = createTheme({
 });
 
 const SignIn = () => {
+
+    const [user] = useAuthState(auth);
+    const [userSession, setUserSession] = useState<string | null>(null);
+    const router = useRouter();
+
+    useEffect(() => {
+        const session = sessionStorage.getItem("user");
+        setUserSession(session);
+        if (user && session) {
+            router.push("/");
+        }
+    }, [user, router]);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const router = useRouter();
     const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
     const handleSubmit = async (e: any) => {
