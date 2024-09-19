@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '@/store'; // Adjust the import according to your project structure
 
 interface Transaction {
     id: number;
@@ -40,4 +41,16 @@ const transactionsSlice = createSlice({
 });
 
 export const { addTransaction } = transactionsSlice.actions;
+
+// Selectors
+export const selectTotalIncome = (state: RootState) =>
+    state.transactions.transactions
+        .filter(transaction => transaction.amount > 0)
+        .reduce((total, transaction) => total + transaction.amount, 0);
+
+export const selectTotalExpenses = (state: RootState) =>
+    state.transactions.transactions
+        .filter(transaction => transaction.amount < 0)
+        .reduce((total, transaction) => total + transaction.amount, 0);
+
 export default transactionsSlice.reducer;

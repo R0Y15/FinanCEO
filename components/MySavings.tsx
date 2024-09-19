@@ -11,13 +11,13 @@ const MySavings = () => {
     const savings = useSelector((state: RootState) => state.savings.savings);
 
     return (
-        <div className="flex flex-col w-full border max-h-[418px] h-[418px] rounded-lg p-5 dark:border-none bg-white dark:bg-gray-900 text-black dark:text-white">
+        <div className="flex flex-col w-full min-w-80 border max-h-[418px] h-[418px] rounded-lg p-5 dark:border-none bg-white dark:bg-gray-900 text-black dark:text-white">
             <div className="flex flex-row justify-between items-center">
                 <h1 className='font-bold text-2xl'>
                     My Savings
                 </h1>
 
-                <Link href="#">
+                <Link href="/transaction">
                     <p className='text-[#00B3FF] hover:cursor-pointer'>
                         View all
                     </p>
@@ -26,7 +26,7 @@ const MySavings = () => {
 
             <div className='mt-10 h-72 overflow-y-auto custom-scrollbar'>
                 {savings.map((item) => (
-                    <SavingsItem key={item.title} title={item.title} amount={item.amount} progress={item.progress} />
+                    <SavingsItem key={item.title} title={item.title} amount={item.amount} goal={item.goal} progress={item.progress} />
                 ))}
             </div>
 

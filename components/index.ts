@@ -1,13 +1,16 @@
-import Chart from "./chartComponent/Chart"
+import Chart from "./Chart"
 import CurrencyConvert from "./CurrencyConvert"
 import LogoutBtn from "./LogoutBtn"
 import MySavings from "./MySavings"
 import Navbar from "./Navbar"
-import PaymentCard from "./PaymentCard/PaymentCard"
-import Sidebar from "./Sidebar/Sidebar"
+import PaymentCard from "./PaymentCard"
+import Sidebar from "./Sidebar"
 import TransactionsForm from "./TransactionsForm"
 import Transactions from "./Transactions"
 import SavingsForm from "./SavingsForm"
+import BalanceCard from "./BalanceCard"
+import QuickTransfer from "./QuickTransfer"
+import UserStatsCard from "./UserStatsCard"
 
 export {
     Navbar,
@@ -20,4 +23,7 @@ export {
     CurrencyConvert,
     Transactions,
     SavingsForm,
+    BalanceCard,
+    QuickTransfer,
+    UserStatsCard,
 }

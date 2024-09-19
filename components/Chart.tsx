@@ -1,12 +1,13 @@
 // @ts-nocheck
 "use client"
 
+import { RootState } from '@/store';
 import { monthlyExpenses } from '@/utils';
 import { Checkbox, FormControl, MenuItem, Select } from '@mui/material';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import { Area, AreaChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-// import './chart.css'
 
 const chart = () => {
     const [showIncome, setShowIncome] = useState<boolean>(true);
@@ -14,7 +15,7 @@ const chart = () => {
 
     return (
         <>
-            <div className='flex justify-between items-center border rounded-xl p-5 max-h-[418px] h-[418px] w-[686px] dark:border-none bg-white dark:bg-gray-900 text-black dark:text-white'>
+            <div className='flex justify-between items-center border rounded-xl p-5 max-h-[418px] h-[418px] max-w-[686px] dark:border-none bg-white dark:bg-gray-900 text-black dark:text-white'>
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-row justify-between items-center p-3">
                         <h1 className='font-bold text-2xl'>Money flow</h1>

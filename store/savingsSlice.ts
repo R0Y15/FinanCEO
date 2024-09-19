@@ -1,4 +1,3 @@
-// savingsSlice.ts
 import { Saving } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -23,8 +22,8 @@ const savingsSlice = createSlice({
         addAmount: (state, action: PayloadAction<{ title: string; amount: number }>) => {
             const { title, amount } = action.payload;
             const saving = state.savings.find((s) => s.title === title);
-            if (saving) {
-                saving.amount += amount;
+            if (saving && saving.amount < saving.goal) {
+                saving.amount = Math.min(saving.amount + amount, saving.goal);
                 saving.progress = Math.min(100, (saving.amount / saving.goal) * 100);
             }
         },
@@ -37,8 +36,11 @@ const savingsSlice = createSlice({
                 progress: Math.min(100, (amount / goal) * 100),
             });
         },
+        deleteSaving: (state, action: PayloadAction<{ title: string }>) => {
+            state.savings = state.savings.filter((s) => s.title !== action.payload.title);
+        },
     },
 });
 
-export const { addAmount, addSaving } = savingsSlice.actions;
+export const { addAmount, addSaving, deleteSaving } = savingsSlice.actions;
 export default savingsSlice.reducer;

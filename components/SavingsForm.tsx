@@ -1,7 +1,7 @@
 "use client"
 
 import { RootState } from '@/store';
-import { addAmount, addSaving } from '@/store/savingsSlice';
+import { addAmount, addSaving, deleteSaving } from '@/store/savingsSlice';
 import { Mysavings } from '@/utils';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
